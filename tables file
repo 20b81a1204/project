@@ -1,0 +1,18 @@
+use project
+//products//
+create table products(pid int(4),sid int(4),sname varchar(30),loc varchar(30),ename varchar (30),cost decimal(10)
+);
+alter table products add primary key(pid);
+ insert into products values(101,1,'balaji','y-junction road sirapur','Tractor',100.0);
+insert into products values(102,1,'balaji','y-junction road sirapur','seed drill',130.0),(103,1,'balaji','y-junction road sirapur','plough',70.0);
+
+
+ insert into products values(104,2,'vijaya','lalpur road beside kohi lake','seed drill',200.0),(105,2,'vijaya','lalpur road beside kohi lake','plough',80.0);
+insert into products values(106,2,'vijaya','lalpur road beside kohi lake','Tractor',180.0);
+
+ insert into products values(107,3,'saraswathi','ymca road','seed drill',150.0),(108,3,'saraswathi','ymca road ','plough',350.0);
+ insert into products values(109,3,'saraswathi','ymca road','Tractor',380.0);
+
+ insert into products values(110,4,'mary','pushpak road','Tractor',680.0);
+ insert into products values(111,4,'mary','pushpak road','seed drill',650.0),(112,4,'mary','pushpak road ','plough',3500.0);
+
