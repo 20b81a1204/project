@@ -32,7 +32,7 @@ PrintWriter pw=response.getWriter();
 			if(rst==null)
 			{
 				pw.println("product not found");
-				rd=request.getRequestDispatcher("homepage.html");
+				rd=request.getRequestDispatcher("home.html");
 				rd.include(request, response);
 				
 			}
