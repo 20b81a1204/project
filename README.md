@@ -25,7 +25,7 @@ PrintWriter pw=response.getWriter();
 		}
 		else {
 		
-			 pst=con.prepareStatement("select sname,loc,cost from products where name=?");
+			 pst=con.prepareStatement("select sname,loc,cost from products where ename=?");
 			pst.setString(1, search);
 			 rst=pst.executeQuery();
 			
