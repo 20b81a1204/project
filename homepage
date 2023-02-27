@@ -11,9 +11,9 @@ font-family:Arial,sans-serif;
 }
 a:link,a:visited,a:hover,a:active{
 text-decoration:none;
-text-align:right;
-background-color: #f44336;
+text-align:center;
   color: white;
+  background-color:black;
 }
 #header {
 		background-color:green;
@@ -24,7 +24,7 @@ background-color: #f44336;
 	.main{
 	align:center;
 	background-color:white;
-    font-family:fantasy;
+    font-family:serif;
     font-weight:bolder;
 	}
 
@@ -91,23 +91,11 @@ background-color: #f44336;
 		margin: 5px 0;
 	}
 	
-.add-to-cart-button, .buy-now-button {
-  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  position:relative;
+.nav{
+display:inline;
 }
-
-.add-to-cart-button:hover, .buy-now-button:hover {
-  color:black;
-}
+.link{
+text-align:center;}
 
 </style>
 </head>
@@ -115,7 +103,7 @@ background-color: #f44336;
 <header id="header">
 		<h1 class="main"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS06gs0pwBi6e4hcmXlXKUa3DbHwjUka8xmVg&usqp=CAU" width="100" height="70" alt="no img" align="middle">FARM AID</h1>
 		
-		<nav>	
+		<nav class="nav">	
           <a href="register.html" target="_blank"><h3>REGISTER</h3></a>
            <a href="login.html" target="_blank"><h3>LOGIN</h3> </a>
            <a href="LogoutServlet" target="_blank"><h3>LOGOUT</h3> </a>
@@ -132,54 +120,33 @@ background-color: #f44336;
 	<div id="product-listings">
 		<div class="product">
 			<img src="https://www.swarajtractors.com/sites/default/files/images/Product-catalogue-40-50hp-742%20XT-985x590.jpg" alt="Product 1">
-			<h3>TRACTOR</h3>
+			<h3>EQUIPMENT</h3>
 			<p>used in agriculture, construction, road building,in the form of bulldozers, scrapers, and diggers.</p>
-		     <button class="add-to-cart-button">Add to Cart</button>
-             <button class="buy-now-button">Buy Now</button>
+			<div class="link">
+			<a href="equipment.html">VISIT</a>
+			</div>
 		</div>
 		
 		<div class="product">
-			<img src="https://5.imimg.com/data5/AU/OY/MY-49540425/onion-blowers-500x500.jpg" alt="Product 2">
-			<h3>SEED DRILL</h3>
-			<p>used for weeding, loosening the soil after growth, and churning and crushing the soil before sowing.</p>
-		       <button class="add-to-cart-button">Add to Cart</button>
-             <button class="buy-now-button">Buy Now</button>
-		</div>
+			<img src="https://images.yourstory.com/cs/5/f02aced0d86311e98e0865c1f0fe59a2/indian-farmer-1610471656527.png?w=752&fm=auto&ar=2:1&mode=crop&crop=faces" alt="Product 2">
+			<h3>WORKERS</h3>
+			<p>Farmers have great importance in our society. They are the ones who provide us food to eat. Since every person needs proper food for their living, so they are a necessity in society.</p>
+			<div class="link">
+			<a href="worker.html">VISIT</a>
+			</div>
+			</div>
 
 		<div class="product">
-			<img src="https://www.fieldking.com/images/tillage/plough/lg/mounted-disc-plough.png" alt="Product 3">
-			<h3>PLOUGH</h3>
-			<p>primary function of plowing is to turn over the top layer of soil, bringing new nutrients to the surface. </p>
-		    <button class="add-to-cart-button">Add to Cart</button>
-             <button class="buy-now-button">Buy Now</button>
+			<img src="https://i0.wp.com/indianinfrastructure.com/wp-content/uploads/2020/08/II-54.jpg?resize=678%2C381&ssl=1" alt="Product 3">
+			<h3>STORAGE</h3>
+			<p>Warehouses are scientific storage structures especially constructed for the protection of the quantity and quality of stored products. </p>
+			<div class="link">
+			<a href="storage.html">VISIT</a>
+			</div>
 		</div>
 		
-		<div class="product">
-			<img src="https://images.yourstory.com/cs/5/f02aced0d86311e98e0865c1f0fe59a2/indian-farmer-1610471656527.png?w=752&fm=auto&ar=2:1&mode=crop&crop=faces" alt="Product 4">
-			<h3>SHIVA</h3>
-			<p>WORK: seed sowing and harvest gathering.</p>
-			<p>CONTACT: 9646502776</p>
-		     <button class="add-to-cart-button">Add to Cart</button>
-             <button class="buy-now-button">Buy Now</button>
-		</div>  
 		
-		<div class="product">
-			<img src="https://img.freepik.com/premium-photo/indian-farmer-cotton-field_54391-2206.jpg" alt="Product 5">
-			<h3>RAMESH</h3>
-			<p>WORK: all agricultural work. </p>
-			<p>CONTACT: 9121546382</p>
-		     <button class="add-to-cart-button">Add to Cart</button>
-             <button class="buy-now-button">Buy Now</button>
-		</div>  
 		
-		<div class="product">
-			<img src="https://i0.wp.com/give.do/blog/wp-content/uploads/2019/10/10-NGOs-empowering-Indian-farmers-to-grow-and-sustain.jpg?fit=1200%2C675&ssl=1" alt="Product 6">
-			<h3>SUNITHA</h3>
-			<p>WORK:cows and buffalo keeping. </p>
-			<p>CONTACT: 9000756473</p>
-		     <button class="add-to-cart-button">Add to Cart</button>
-             <button class="buy-now-button">Buy Now</button>
-		</div>  
 		</div>  
 </body>
 </html>
