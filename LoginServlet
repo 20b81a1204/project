@@ -50,7 +50,9 @@ public class LoginServelt extends HttpServlet {
 	    	 }
 	     }
 	     else {
-	    	 pw.println("Please enter valid mobile number or password");
+	    	pw.println("<script type=\"text/javascript\">");
+	    	 pw.println("alert('Please enter valid mobile number or password');");
+	    	 pw.println("</script>");
 		RequestDispatcher rd=request.getRequestDispatcher("Login.html");
 		rd.include(request, response);
 	     }
