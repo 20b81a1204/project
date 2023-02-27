@@ -1,0 +1,52 @@
+try {
+			PrintWriter pw=response.getWriter();
+			String search=request.getParameter("search1");
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studb","root","root");
+			PreparedStatement pst;
+			RequestDispatcher rd;
+			ResultSet rst;
+			//pw.println("this is a project"+search);
+		if (search.equals("labor"))
+		{
+			
+			pst=con.prepareStatement("select *from workers");
+			rst=pst.executeQuery();
+			rd=request.getRequestDispatcher("worker.html");
+			rd.forward(request, response);
+			
+		}
+		else if(search.equals("storage"))
+		{
+			pw.println("this is a project");
+			pst=con.prepareStatement("select *from storage");
+			rst=pst.executeQuery();
+			rd=request.getRequestDispatcher("storage.html");
+			rd.forward(request, response);
+		}
+		else {
+			
+			 pst=con.prepareStatement("select sname,loc,cost from products where ename=?");
+			pst.setString(1, search);
+			 rst=pst.executeQuery();
+			
+			if(rst.next()==false)
+			{
+				pw.println("product not found");
+				rd=request.getRequestDispatcher("home.html");
+				rd.include(request, response);
+				
+			}
+			else {
+				pw.println("this is a project"+search);
+				rd=request.getRequestDispatcher("product");
+				rd.forward(request, response);
+			}
+			
+		}
+		
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
