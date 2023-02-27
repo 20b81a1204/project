@@ -1,0 +1,76 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+public class ImageFetcher {
+   public static void main(String[] args) {
+      Connection conn = null;
+      PreparedStatement pstmt = null;
+      ResultSet rs = null;
+      InputStream input = null;
+      ByteArrayOutputStream output = null;
+
+      try {
+         // 1. Load the JDBC driver for your database
+         Class.forName("com.mysql.jdbc.Driver");
+         
+         // 2. Create a connection to the database
+         String url = "jdbc:mysql://localhost:3306/mydatabase";
+         String user = "myusername";
+         String password = "mypassword";
+         conn = DriverManager.getConnection(url, user, password);
+         
+         // 3. Prepare a statement to fetch the image from the database
+         String sql = "SELECT image FROM mytable WHERE id=?";
+         pstmt = conn.prepareStatement(sql);
+         pstmt.setInt(1, 1); // Set the value of the parameter
+         
+         // 4. Execute the query and get the result set
+         rs = pstmt.executeQuery();
+         
+         // 5. Extract the image from the result set and store it in a byte array
+         if (rs.next()) {
+            input = rs.getBinaryStream("image");
+            output = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = input.read(buffer)) != -1) {
+               output.write(buffer, 0, bytesRead);
+            }
+         }
+         
+         // 6. Do something with the image data (e.g. display it on a JLabel)
+         byte[] imageData = output.toByteArray();
+         ImageIcon imageIcon = new ImageIcon(imageData);
+         JLabel imageLabel = new JLabel(imageIcon);
+         JFrame frame = new JFrame();
+         frame.getContentPane().add(imageLabel);
+         frame.pack();
+         frame.setVisible(true);
+      } catch (ClassNotFoundException e) {
+         e.printStackTrace();
+      } catch (SQLException e) {
+         e.printStackTrace();
+      } catch (IOException e) {
+         e.printStackTrace();
+      } finally {
+         // 7. Close the resources
+         try {
+            if (rs != null) rs.close();
+            if (pstmt != null) pstmt.close();
+            if (conn != null) conn.close();
+            if (input != null) input.close();
+            if (output != null) output.close();
+         } catch (SQLException e) {
+            e.printStackTrace();
+         } catch (IOException e) {
+            e.printStackTrace();
+         }
+      }
+   }
+}
