@@ -36,6 +36,8 @@ public class Logout extends HttpServlet {
 		if(s!=null) {
 			s.invalidate();
 			((ServletResponse) request).getWriter().println("Logged out succefully");
+			RequestDispatcher rd=request.getRequestDispatcher("Home.html");
+	 		rd.include(request, response); 
 			}
 	}
 
