@@ -1,0 +1,15 @@
+ workers table:
+create table workers(name varchar(20),age int,contact varchar(10),cost_per_month int);
+insert into workers values('vignesh',30,'9735617281',400);
+insert into workers values('mallesh',50,'8326152128',300);
+ insert into workers values('sitara',60,'9731652834',450);
+alter table workers add column wid varchar(10);
+update workers set wid='1' where name='vignesh';
+ update workers set wid='2' where name='mallesh';
+ update workers set wid='3' where name='sitara';
+alter table workers add primary key(wid);
+warehouse:
+ create table warehouse(loc varchar(20),cpm varchar(20),name varchar(20),mno varchar(10),wareid varchar(20)primary key);
+ insert into warehouse values('ibrahimpatnam',2000,'sitara',9848786878,1);
+ insert into warehouse values('bongloor',3000,'mallesh',7689809998,3);
+insert into warehouse values('mangalpally',3000,'vinay',9731652834,2);
